@@ -1,13 +1,15 @@
 from timeit import default_timer as timer
 
+lines = [line.strip() for line in open("input.txt")]
+
 def part_1():
     start = timer()
-    lines = [line.strip() for line in open("input.txt")]
+    # code here
     return None, timer() - start
 
 def part_2():
     start = timer()
-    lines = [line.strip() for line in open("input.txt")]
+    # code here
     return None, timer() - start
 
 if __name__ == "__main__":

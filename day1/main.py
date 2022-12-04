@@ -4,28 +4,11 @@ input = [line.strip() for line in open("input.txt")]
 
 def part_1():
     start = timer()
-    i = 0
-    sums = [0]
-    for index,line in enumerate(input):
-        if line == "":
-            sums.append(0)
-            i+=1
-        else:
-            sums[i] += int(line)
-    return max(sums), timer() - start
+    return max([sum([int(num) for num in char.split("\n")]) for char in open('input.txt', 'r').read().split("\n\n")]), timer() - start
 
 def part_2():
     start = timer()
-    i = 0
-    sums = [0]
-    for index,line in enumerate(input):
-        if line == "":
-            sums.append(0)
-            i+=1
-        else:
-            sums[i] += int(line)
-    sums = sorted(sums)
-    return sum(sums[len(sums) - 3:]), timer() - start
+    return sum(sorted([sum([int(num) for num in char.split("\n")]) for char in open('input.txt', 'r').read().split("\n\n")])[-3:]), timer() - start
 
 if __name__ == "__main__":
     part_1, time_1 = part_1()
